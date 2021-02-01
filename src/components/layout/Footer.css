@@ -3,4 +3,11 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #dedede;
+    box-shadow: 0px 3px 6px #00000080;
+}
+.footer__text {
+    padding: 10px 0px;
+    text-align: center;
 }

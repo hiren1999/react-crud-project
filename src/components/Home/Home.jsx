@@ -1,11 +1,13 @@
 import React from "react";
-import Sidedrawer from "../UI/sidedrawer/Sidedrawer";
+import BasicTable from "../UI/DataTable/BasicTable";
+import "./Home.css";
 
 const Home = () => {
     return (
         <div>
-            home
-            <Sidedrawer />
+            <div className='card'>
+                <BasicTable />
+            </div>
         </div>
     );
 };

@@ -3,8 +3,8 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <footer className='text-center border-top footer shadow'>
-            <p className='py-2 mb-0'>@copyrights by Hiren</p>
+        <footer className='footer'>
+            <p className='footer__text mb-0'>@copyrights by Hiren</p>
         </footer>
     );
 };
