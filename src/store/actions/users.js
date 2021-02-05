@@ -36,18 +36,21 @@ export const fetchUsers = () => {
     };
 };
 
-export const deleteUser = (id) => {
-    console.log(id, "id");
+export const addNewUser = (user) => ({
+    type: actionTypes.ADD_NEW_USER,
+    payload: user,
+});
+
+export const addUser = (data) => {
     return (dispatch) => {
         axios
-            .delete(`https://jsonplaceholder.typicode.com/users/${id}`, {
-                method: "DELETE",
+            .post("https://jsonplaceholder.typicode.com/users", data)
+            .then((response) => {
+                console.log(response, "addUser res");
+                dispatch(addNewUser(response.data));
             })
-            .then((response) =>
-                dispatch({
-                    type: actionTypes.DELETE_USER,
-                    payload: response,
-                })
-            );
+            .catch((error) => {
+                console.log(error);
+            });
     };
 };

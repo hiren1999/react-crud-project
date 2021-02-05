@@ -25,11 +25,10 @@ const usersReducer = (state = initState, action) => {
                 users: [],
                 error: action.payload,
             };
-        case actionTypes.DELETE_USER:
+        case actionTypes.ADD_NEW_USER:
             return {
-                ...state,
                 loading: false,
-                users: action.payload,
+                users: [action.payload, ...state.users],
                 error: "",
             };
         default:

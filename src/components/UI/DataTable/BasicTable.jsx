@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Basictable.css";
 import { connect } from "react-redux";
-import { deleteUser, fetchUsers } from "../../../store/actions/index";
+import { fetchUsers } from "../../../store/actions/index";
 import ReactDatatable from "@ashvin27/react-datatable";
 import Loader from "../Loader/Loader";
 import { MdModeEdit } from "react-icons/md";
@@ -19,8 +19,8 @@ const BasicTable = (props) => {
         fetchUsers();
     }, [fetchUsers]);
 
-    const editRecord = (record) => {
-        console.log("Edit Record", record);
+    const editRecord = (id) => {
+        console.log("Edit Record", id);
     };
 
     const deleteRecord = (id) => {
@@ -59,7 +59,7 @@ const BasicTable = (props) => {
                     <>
                         <button
                             className='btn btn-primary btn-sm'
-                            onClick={() => editRecord(record)}
+                            onClick={() => editRecord(record.id)}
                             style={{ marginRight: "5px" }}>
                             <MdModeEdit />
                         </button>
@@ -100,7 +100,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUsers: () => dispatch(fetchUsers()),
-        deleteUser: () => dispatch(deleteUser()),
     };
 };
 

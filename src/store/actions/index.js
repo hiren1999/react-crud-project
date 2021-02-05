@@ -3,5 +3,6 @@ export {
     fetchUsersRequest,
     fetchUsersSuccess,
     fetchUsersFail,
-    deleteUser,
+    addNewUser,
+    addUser,
 } from "./users";
