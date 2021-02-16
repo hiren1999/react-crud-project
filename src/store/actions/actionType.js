@@ -3,3 +3,7 @@ export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
 export const FETCH_USERS_FAIL = "FETCH_USERS_FAIL";
 
 export const ADD_NEW_USER = "ADD_NEW_USER";
+
+export const GET_USER = "GET_USER";
+
+export const UPDATE_USER = "UPDATE_USER";

@@ -6,8 +6,10 @@ import ReactDatatable from "@ashvin27/react-datatable";
 import Loader from "../Loader/Loader";
 import { MdModeEdit } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 const BasicTable = (props) => {
+    let history = useHistory();
     const { userData, fetchUsers, deleteUser } = props;
 
     const [config, setConfig] = useState({
@@ -21,6 +23,7 @@ const BasicTable = (props) => {
 
     const editRecord = (id) => {
         console.log("Edit Record", id);
+        history.push(`/users/${id}`);
     };
 
     const deleteRecord = (id) => {

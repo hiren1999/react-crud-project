@@ -54,3 +54,22 @@ export const addUser = (data) => {
             });
     };
 };
+
+export const getUser = (id) => ({
+    type: actionTypes.GET_USER,
+    payload: id,
+});
+
+export const updateUser = (id, data) => {
+    return (dispatch) => {
+        axios
+            .put(`https://jsonplaceholder.typicode.com/users/${id}`, data)
+            .then((response) => {
+                console.log(response, "updateuser res");
+                dispatch(getUser(response.data));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+};

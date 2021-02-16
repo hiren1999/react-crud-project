@@ -3,6 +3,7 @@ import * as actionTypes from "../actions/actionType";
 const initState = {
     loading: false,
     users: [],
+    user: null,
     error: "",
 };
 
@@ -30,6 +31,23 @@ const usersReducer = (state = initState, action) => {
                 loading: false,
                 users: [action.payload, ...state.users],
                 error: "",
+            };
+        case actionTypes.GET_USER:
+            let arr = state.users.filter((user) => user.id === action.payload);
+            arr = arr.values();
+            for (let val of arr) {
+                arr = val;
+            }
+            return {
+                ...state,
+                user: arr,
+            };
+        case actionTypes.UPDATE_USER:
+            return {
+                ...state,
+                user: state.user.map((user) =>
+                    user.id === action.payload.id ? action.payload : user
+                ),
             };
         default:
             return state;

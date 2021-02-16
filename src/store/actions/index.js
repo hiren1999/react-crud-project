@@ -5,4 +5,6 @@ export {
     fetchUsersFail,
     addNewUser,
     addUser,
+    getUser,
+    updateUser,
 } from "./users";
